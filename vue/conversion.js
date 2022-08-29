@@ -116,10 +116,6 @@ var app = new Vue({
             }
         },
 
-        descomponerVectores: function(){
-            
-        },
-
         limpiar: function() {
             this.valorEntrada = '';
             this.valorSalida = '';

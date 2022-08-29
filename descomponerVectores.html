@@ -22,85 +22,111 @@
                     </tr>
     
                     <tr>
-                        <td style="width: 8%;">Vector 1: </td>
-                        <td>
-                            <select name="selec_vec1" id="selec_vec1" v-model="selec_vec1" style="width: 100px;" v-on:change="limpiar">
-                                <option disabled value="">Seleccione:</option>
-                                <option value="caso1">Caso 1</option>
-                                <option value="caso2">Caso 2</option>
+                        <td style="width: 5%;">Vector 1: </td>
+                        <td style="width: 12%;">
+                            <select name="selec_vec1" id="selec_vec1" v-model="selec_vec1" style="width: 80%;">
+                                <option disabled value="">Seleccionar:</option>
+                                <option value="1">Caso 1</option>
+                                <option value="2">Caso 2</option>
                             </select>
-                            <td>
-                                Modulo: <input type="text" name="valorModulo" id="valorModulo" v-model="valorModulo" style="width: 100px">
-                            </td>
-                            <td>
-                                Angulo: <input type="text" name="valorAngulo" id="valorModulo" v-model="valorModulo" style="width: 100px">
-                            </td>
-                            <td>
-                                X: <input type="text" name="valorX" id="valorX" v-model="valorX" style="width: 100px" readonly>
-                            </td>
-                            <td>
-                                Y: <input type="text" name="valorY" id="valorY" v-model="valorY" style="width: 100px" readonly>
-                            </td>
-                            
                         </td>
-                        <!--
+
+                        <td style="width: 5%;">Modulo:</td>
                         <td>
-                            <button v-on:click="convertirVelocidad">Convertir</button>
+                            <input type="text" name="valorModulo" id="valorModulo" v-model="valorModulo" style="width: 50%;">
                         </td>
-                        -->
+                        
+                        <td style="width: 5%;">Angulo: </td>
+                        <td>
+                            <input type="text" name="valorAngulo" id="valorAngulo" v-model="valorAngulo" style="width: 50%;">
+                        </td>
+
+                        <td style="width: 10%;">
+                            <button v-on:click="calcularXY" >Convertir</button>
+                        </td>
+
+                        <td style="width: 5%;">X: </td>
+                        <td>
+                            <input type="text" name="valorX" id="valorX" v-model="valorX" style="width: 70%;" readonly>
+                        </td>
+
+                        <td style="width: 5%;">Y: </td>
+                        <td>
+                            <input type="text" name="valorY" id="valorY" v-model="valorY" style="width: 70%;" readonly>
+                        </td>
                     </tr>
 
                     <tr>
-                        <td style="width: 8%;">Vector 2: </td>
-                        <td>
-                            <select name="selec_vec2" id="selec_vec2" v-model="selec_vec2" style="width: 100px;" v-on:change="limpiar">
-                                <option disabled value="">Seleccione:</option>
-                                <option value="caso1">Caso 1</option>
-                                <option value="caso2">Caso 2</option>
+                        <td style="width: 5%;">Vector 2: </td>
+                        <td style="width: 12%;">
+                            <select name="selec_vec2" id="selec_vec2" v-model="selec_vec2" style="width: 80%;">
+                                <option disabled value="">Seleccionar:</option>
+                                <option value="1">Caso 1</option>
+                                <option value="2">Caso 2</option>
                             </select>
-                            <td>
-                                Modulo: <input type="text" name="valorModulo" id="valorModulo" v-model="valorModulo" style="width: 100px">
-                            </td>
-                            <td>
-                                Angulo: <input type="text" name="valorAngulo" id="valorModulo" v-model="valorModulo" style="width: 100px">
-                            </td>
-                            <td>
-                                X: <input type="text" name="valorX" id="valorX" v-model="valorX" style="width: 100px" readonly>
-                            </td>
-                            <td>
-                                Y: <input type="text" name="valorY" id="valorY" v-model="valorY" style="width: 100px" readonly>
-                            </td>
+                        </td>
+
+                        <td style="width: 5%;">Modulo:</td>
+                        <td>
+                            <input type="text" name="valorModulo2" id="valorModulo2" v-model="valorModulo2" style="width: 50%;">
+                        </td>
+                        
+                        <td style="width: 5%;">Angulo: </td>
+                        <td>
+                            <input type="text" name="valorAngulo2" id="valorAngulo2" v-model="valorAngulo2" style="width: 50%;">
+                        </td>
+
+                        <td style="width: 10%;">
+                            <button v-on:click="calcularXY2" >Convertir</button>
+                        </td>
+
+                        <td style="width: 5%;">X: </td>
+                        <td>
+                            <input type="text" name="valorX2" id="valorX2" v-model="valorX2" style="width: 70%;" readonly>
+                        </td>
+
+                        <td style="width: 5%;">Y: </td>
+                        <td>
+                            <input type="text" name="valorY2" id="valorY2" v-model="valorY2" style="width: 70%;" readonly>
+                        </td>
                         </td>
                     </tr>
                         
                     <tr>
-                        <td style="width: 8%;">Vector R: </td>
-                        <td>
-
+                        <td style="width: 8%;">Vector Resultante: </td>
+                        <td style="width: 10%;">
+                            <button v-on:click="datosvectorResultante" >Convertir</button>
                         </td>
-                        <td style="padding-left: 20px;">
-                            ΣX: <input type="text" name="valorSumX" id="valorSumX" v-model="valorSumX" style="width: 100px" readonly>
-                        </td>
+                       
+                        <td style="width: 5%;">AR: </td>
                         <td>
-                            ΣY: <input type="text" name="valorSumY" id="valorSumY" v-model="valorSumY" style="width: 100px" readonly>
-                        </td>
-                        <td>
-                            AR: <input type="text" name="valorY" id="valorY" v-model="valorY" style="width: 100px" readonly>
-                        </td>
-                        <td>
-                            VR: <input type="text" name="valorY" id="valorY" v-model="valorY" style="width: 100px" readonly>
+                            <input type="text" name="anguloResultante" id="anguloResultante" v-model="anguloResultante" style="width: 50%;" readonly>
                         </td>
 
+                        <td style="width: 5%;">VR: </td>
+                        <td>
+                            <input type="text" name="vectorResultante" id="vectorResultante" v-model="vectorResultante" style="width: 50%;" readonly>
+                        </td>
+                        <td></td>
+                        <td style="width: 5%;">ΣX: </td>
+                        <td>
+                            <input type="text" name="valorSumX" id="valorSumX" v-model="valorSumX" style="width: 70%;" readonly>
+                        </td>
+
+                        <td style="width: 5%;">ΣY: </td>
+                        <td>
+                            <input type="text" name="valorSumY" id="valorSumY" v-model="valorSumY" style="width: 70%;" readonly>
+                        </td>
                     </tr>
 
-                    <tr>
+                    <!-- <tr>
                         <td><button id="calcularX"> Calcular X</button></td>
                         <td><button id="calcularY"> Calcular Y</button></td>
                         <td><button id="sumaX"> Sumar X</button></td>
                         <td><button id="sumarYX"> Sumar Y</button></td>
                         <td><button id="calcularAR"> Calcular AR</button></td>
                         <td><button id="calcularVR"> Calcular VR</button></td>
-                    </tr>
+                    </tr> -->
                     
 
                 </table>
@@ -117,7 +143,7 @@
         
     </div>
 
-    <script src="vue/conversion.js"></script>
+    <script src="vue/descomponerVectores.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
 </html>
