@@ -40,20 +40,20 @@ var app = new Vue({
 
                     if (this.selec_vec1 == '1') {
     
-                        var valorX = this.valorModulo * seno;
-                        this.valorX = valorX;
+                        var valorX = this.valorModulo * cos;
+                        this.valorX = Math.round(valorX,1);
 
-                        var valorY = this.valorModulo * cos;
-                        this.valorY = valorY;
+                        var valorY = this.valorModulo * seno;
+                        this.valorY = Math.round(valorY,1);
                     }
                     
                     if (this.selec_vec1 == '2') {
 
-                        var valorX = this.valorModulo * cos;
-                        this.valorX = valorX;
+                        var valorX = this.valorModulo * seno;
+                        this.valorX = Math.round(valorX,1);
                         
-                        var valorY = this.valorModulo * seno;
-                        this.valorY = valorY;
+                        var valorY = this.valorModulo * cos;
+                        this.valorY = Math.round(valorY,1);
                     }
                 }
                 else {
@@ -77,20 +77,20 @@ var app = new Vue({
 
                     if (this.selec_vec2 == '1') {
     
-                        var valorX = this.valorModulo2 * seno;
-                        this.valorX2 = valorX;
+                        var valorX = this.valorModulo2 * cos;
+                        this.valorX2 = Math.round(valorX,1);
 
-                        var valorY = this.valorModulo2 * cos;
-                        this.valorY2 = valorY;
+                        var valorY = this.valorModulo2 * seno;
+                        this.valorY2 = Math.round(valorY,1);
                     }
                     
                     if (this.selec_vec2 == '2') {
 
                         var valorX = this.valorModulo2 * cos;
-                        this.valorX2 = valorX;
+                        this.valorX2 = Math.round(valorX,1);
                         
                         var valorY = this.valorModulo2 * seno;
-                        this.valorY2 = valorY;
+                        this.valorY2 = Math.round(valorY,1);
                     }
                 }
                 else {
@@ -111,7 +111,7 @@ var app = new Vue({
 
                 this.valorSumX = x;
                 this.valorSumY = y;
-
+                
                 x = x * (Math.PI / 180);
                 y = y * (Math.PI / 180);
                 var xy = x / y;
