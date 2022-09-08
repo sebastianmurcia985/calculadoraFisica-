@@ -6,138 +6,169 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8"></script>
     <script src="sweetalert2/dist/sweetalert2.min.js"></script>
+    <link href="css/diseño.css" rel="stylesheet"/>
 	<link rel="stylesheet" href="sweetalert2/dist/sweetalert2.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <title>Conversion</title>
+
+    <style>
+        p {
+            color: white;
+        }
+
+        body {
+                background-image: url(imagenes/abstract-smooth-empty-grey-studio-well-use-as-background-business-report-digital-website-template-backdrop.jpg);
+            }
+    </style>    
 </head>
 <body>
     <div id="myapp" style="height:inherit;" v-cloak>
+
+        <div class="container">
+            <header class="d-flex justify-content-center py-3">
+  
+              <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                  <img src="imagenes/delta.png" alt="" width="60" height="60">
+              </a>
+  
+              <ul class="nav nav-pills">
+                  <li class="nav-item">
+                      <a href="index.html" class="nav-link active" aria-current="page">Inicio</a>
+                  </li>
+  
+                  <li class="nav-item">
+                      <a href="menuConversion.html" class="nav-link">Conversión</a>
+                  </li>
+  
+                  <li class="nav-item">
+                      <a href="descomponerVectores.html" class="nav-link">Descomposición vectores</a>
+                  </li>
+  
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">Movimientos</a>
+                  </li>
+  
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">About</a>
+                  </li>
+              </ul>
+            </header>
+        </div>  
+
         <div class="container px-4 py-5" id="featured-3">
             <h2 class="pb-2 border-bottom">Descomponer vectores <a href="index.html"><img src="imagenes/atras.png" alt="Atrás" width="35px;"></a></h2>
             
             <div>
                 <table>
                     <tr>
-                        <td class="titulos" colspan="12">Casos de uso:</td>
+                        <td class="titulos" colspan="13">Casos de uso:</td>
                     </tr>
     
                     <tr>
-                        <td style="width: 5%;">Vector 1: </td>
-                        <td style="width: 12%;">
-                            <select name="selec_vec1" id="selec_vec1" v-model="selec_vec1" style="width: 80%;">
+                        <td style="width: 5%;" class="form-label">Vector 1: </td>
+                        <td style="width: 15%;">
+                            <select name="selec_vec1" id="selec_vec1" v-model="selec_vec1" style="width: 80%;" class="form-select">
                                 <option disabled value="">Seleccionar:</option>
                                 <option value="1">Caso 1</option>
                                 <option value="2">Caso 2</option>
                             </select>
                         </td>
 
-                        <td style="width: 5%;">Modulo:</td>
+                        <td style="width: 5%;" class="form-label">Modulo:</td>
                         <td>
-                            <input type="text" name="valorModulo" id="valorModulo" v-model="valorModulo" style="width: 50%;">
+                            <input type="text" name="valorModulo" id="valorModulo" v-model="valorModulo" style="width: 50%;" class="form-control">
                         </td>
                         
-                        <td style="width: 5%;">Angulo: </td>
+                        <td style="width: 5%;" class="form-label">Angulo: </td>
                         <td>
-                            <input type="text" name="valorAngulo" id="valorAngulo" v-model="valorAngulo" style="width: 50%;">
+                            <input type="text" name="valorAngulo" id="valorAngulo" v-model="valorAngulo" style="width: 50%;" class="form-control">
                         </td>
 
                         <td style="width: 10%;">
-                            <button v-on:click="calcularXY" >Convertir</button>
+                            <button class="w-80 btn btn-lg btn-primary" v-on:click="calcularXY" >Convertir</button>
                         </td>
 
-                        <td style="width: 5%;">X: </td>
-                        <td>
-                            <input type="text" name="valorX" id="valorX" v-model="valorX" style="width: 70%;" readonly>
-                        </td>
-
-                        <td style="width: 5%;">Y: </td>
-                        <td>
-                            <input type="text" name="valorY" id="valorY" v-model="valorY" style="width: 70%;" readonly>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td style="width: 5%;">Vector 2: </td>
-                        <td style="width: 12%;">
-                            <select name="selec_vec2" id="selec_vec2" v-model="selec_vec2" style="width: 80%;">
-                                <option disabled value="">Seleccionar:</option>
-                                <option value="1">Caso 1</option>
-                                <option value="2">Caso 2</option>
-                            </select>
-                        </td>
-
-                        <td style="width: 5%;">Modulo:</td>
-                        <td>
-                            <input type="text" name="valorModulo2" id="valorModulo2" v-model="valorModulo2" style="width: 50%;">
-                        </td>
-                        
-                        <td style="width: 5%;">Angulo: </td>
-                        <td>
-                            <input type="text" name="valorAngulo2" id="valorAngulo2" v-model="valorAngulo2" style="width: 50%;">
-                        </td>
-
-                        <td style="width: 10%;">
-                            <button v-on:click="calcularXY2" >Convertir</button>
-                        </td>
-
-                        <td style="width: 5%;">X: </td>
-                        <td>
-                            <input type="text" name="valorX2" id="valorX2" v-model="valorX2" style="width: 70%;" readonly>
-                        </td>
-
-                        <td style="width: 5%;">Y: </td>
-                        <td>
-                            <input type="text" name="valorY2" id="valorY2" v-model="valorY2" style="width: 70%;" readonly>
-                        </td>
-                        </td>
-                    </tr>
-                        
-                    <tr>
-                        <td style="width: 8%;">Vector Resultante: </td>
-                        <td style="width: 10%;">
-                            <button v-on:click="datosvectorResultante" >Convertir</button>
-                        </td>
-                    
-                        <td style="width: 5%;">AR: </td>
-                        <td>
-                            <input type="text" name="anguloResultante" id="anguloResultante" v-model="anguloResultante" style="width: 50%;" readonly>
-                        </td>
-
-                        <td style="width: 5%;">VR: </td>
-                        <td>
-                            <input type="text" name="vectorResultante" id="vectorResultante" v-model="vectorResultante" style="width: 50%;" readonly>
-                        </td>
                         <td></td>
-                        <td style="width: 5%;">ΣX: </td>
+
+                        <td style="width: 5%;" class="form-label">X: </td>
                         <td>
-                            <input type="text" name="valorSumX" id="valorSumX" v-model="valorSumX" style="width: 70%;" readonly>
+                            <input type="text" name="valorX" id="valorX" v-model="valorX" style="width: 70%;" class="form-control" readonly>
                         </td>
 
-                        <td style="width: 5%;">ΣY: </td>
+                        <td style="width: 5%;" class="form-label">Y: </td>
                         <td>
-                            <input type="text" name="valorSumY" id="valorSumY" v-model="valorSumY" style="width: 70%;" readonly>
+                            <input type="text" name="valorY" id="valorY" v-model="valorY" style="width: 70%;" class="form-control" readonly>
                         </td>
                     </tr>
 
-                    <!-- <tr>
-                        <td><button id="calcularX"> Calcular X</button></td>
-                        <td><button id="calcularY"> Calcular Y</button></td>
-                        <td><button id="sumaX"> Sumar X</button></td>
-                        <td><button id="sumarYX"> Sumar Y</button></td>
-                        <td><button id="calcularAR"> Calcular AR</button></td>
-                        <td><button id="calcularVR"> Calcular VR</button></td>
-                    </tr> -->
-                    
+                    <tr>
+                        <td style="width: 5%;" class="form-label">Vector 2: </td>
+                        <td style="width: 12%;">
+                            <select name="selec_vec2" id="selec_vec2" v-model="selec_vec2" style="width: 80%;" class="form-select">
+                                <option disabled value="">Seleccionar:</option>
+                                <option value="1">Caso 1</option>
+                                <option value="2">Caso 2</option>
+                            </select>
+                        </td>
 
+                        <td style="width: 5%;" class="form-label">Modulo:</td>
+                        <td>
+                            <input type="text" name="valorModulo2" id="valorModulo2" v-model="valorModulo2" style="width: 50%;" class="form-control">
+                        </td>
+                        
+                        <td style="width: 5%;" class="form-label">Angulo: </td>
+                        <td>
+                            <input type="text" name="valorAngulo2" id="valorAngulo2" v-model="valorAngulo2" style="width: 50%;" class="form-control">
+                        </td>
+
+                        <td style="width: 10%;">
+                            <button class="w-80 btn btn-lg btn-primary"  v-on:click="calcularXY2" >Convertir</button>
+                        </td>
+
+                        <td></td>
+
+                        <td style="width: 5%;" class="form-label">X: </td>
+                        <td>
+                            <input type="text" name="valorX2" id="valorX2" v-model="valorX2" style="width: 70%;" class="form-control" readonly>
+                        </td>
+
+                        <td style="width: 5%;" class="form-label">Y: </td>
+                        <td>
+                            <input type="text" name="valorY2" id="valorY2" v-model="valorY2" style="width: 70%;" class="form-control" readonly>
+                        </td>
+                        </td>
+                    </tr>
+                        
+                    <tr>
+                        <td style="width: 8%;" class="form-label">Vector Resultante: </td>
+                        <td style="width: 10%;">
+                            <button class="w-80 btn btn-lg btn-primary" v-on:click="datosvectorResultante" >Convertir</button>
+                        </td>
+                    
+                        <td style="width: 5%;" class="form-label">AR: </td>
+                        <td>
+                            <input type="text" name="anguloResultante" id="anguloResultante" v-model="anguloResultante" style="width: 50%;" class="form-control" readonly>
+                        </td>
+
+                        <td style="width: 5%;" class="form-label">VR: </td>
+                        <td>
+                            <input type="text" name="vectorResultante" id="vectorResultante" v-model="vectorResultante" style="width: 50%;" class="form-control" readonly>
+                        </td>
+                        
+                        <td></td>
+                        <td></td>
+
+                        <td style="width: 5%;" class="form-label">ΣX: </td>
+                        <td>
+                            <input type="text" name="valorSumX" id="valorSumX" v-model="valorSumX" style="width: 70%;" class="form-control" readonly>
+                        </td>
+
+                        <td style="width: 5%;" class="form-label">ΣY: </td>
+                        <td>
+                            <input type="text" name="valorSumY" id="valorSumY" v-model="valorSumY" style="width: 70%;" class="form-control" readonly>
+                        </td>
+                    </tr>
                 </table>
-                <!--
-            <button v-on:click="calcularX">Calcular X</button>
-            <button v-on:click="calcularY">Calcular Y</button>
-            <button v-on:click="sumaX">Sumar X</button>
-            <button v-on:click="sumaY">Sumar Y</button>
-            <button v-on:click="calcularAR">Calcular AR</button>
-            <button v-on:click="calcularVR">Calcular VR</button>
-            -->
             </div>
         </div>
         

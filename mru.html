@@ -9,25 +9,67 @@
 	<link rel="stylesheet" href="sweetalert2/dist/sweetalert2.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <title>Conversion</title>
+
+    <style>
+        p {
+            color: white;
+        }
+
+        body {
+                background-image: url(imagenes/abstract-smooth-empty-grey-studio-well-use-as-background-business-report-digital-website-template-backdrop.jpg);
+            }
+    </style>
 </head>
 <body>
     <div id="myapp" style="height:inherit;" v-cloak>
+
+        <div class="container">
+            <header class="d-flex justify-content-center py-3">
+  
+              <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                  <img src="imagenes/delta.png" alt="" width="60" height="60">
+              </a>
+  
+              <ul class="nav nav-pills">
+                  <li class="nav-item">
+                      <a href="index.html" class="nav-link active" aria-current="page">Inicio</a>
+                  </li>
+  
+                  <li class="nav-item">
+                      <a href="menuConversion.html" class="nav-link">Conversión</a>
+                  </li>
+  
+                  <li class="nav-item">
+                      <a href="descomponerVectores.html" class="nav-link">Descomposición vectores</a>
+                  </li>
+  
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">Movimientos</a>
+                  </li>
+  
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">About</a>
+                  </li>
+              </ul>
+            </header>
+        </div>
+
         <div class="container px-4 py-5" id="featured-3">
-            <h2 class="pb-2 border-bottom">Movimiento Rectilineo Uniforme<a href="menuMovimientos.html"><img src="imagenes/atras.png" alt="Atrás" width="35px;"></a></h2>
+            <h2 class="pb-2 border-bottom">Movimiento Rectilineo Uniforme  <a href="menuMovimientos.html"><img src="imagenes/atras.png" alt="Atrás" width="35px;"></a></h2>
             
             <div>
                 <table>
                     <tr>
-                        <td style="width: 10%;">Distancia = </td>
+                        <td style="width: 10%;" class="form-label">Distancia = </td>
 
-                        <td style="width: 10%; text-align: center;">Velocidad: </td>
+                        <td style="width: 10%; text-align: center;" class="form-label">Velocidad: </td>
 
                         <td>
                             <input type="text" name="valorVelocidad_D" id="valorVelocidad_D" v-model="valorVelocidad_D" style="width: 100%;">
                         </td>
 
-                        <td style="width: 10%; text-align: center;">
-                            <select name="unidades_velocidad_D" id="unidades_velocidad_D" v-model="unidades_velocidad_D" style="width: 100%;">
+                        <td style="width: 15%; text-align: center;">
+                            <select name="unidades_velocidad_D" id="unidades_velocidad_D" v-model="unidades_velocidad_D" style="width: 100%;" class="form-select">
                                 <option disabled value="">Seleccionar:</option>
                                 <option value="1">KM/H</option>
                                 <option value="2">KM/M</option>
@@ -35,14 +77,14 @@
                             </select>
                         </td>
                         
-                        <td style="width: 10%; text-align: center;">Tiempo: </td>
+                        <td style="width: 10%; text-align: center;" class="form-label">Tiempo: </td>
                         
                         <td>
-                            <input type="text" name="valorTiempo_D" id="valorTiempo_D" v-model="valorTiempo_D" style="width: 100%;">
+                            <input type="text" name="valorTiempo_D" id="valorTiempo_D" v-model="valorTiempo_D" style="width: 100%;" class="form-control">
                         </td>
 
-                        <td style="width: 10%; text-align: center;">
-                            <select name="unidades_tiempo_D" id="unidades_tiempo_D" v-model="unidades_tiempo_D" style="width: 100%;">
+                        <td style="width: 15%; text-align: center;">
+                            <select name="unidades_tiempo_D" id="unidades_tiempo_D" v-model="unidades_tiempo_D" style="width: 100%;" class="form-select">
                                 <option disabled value="">Seleccionar:</option>
                                 <option value="1">Hora(s)</option>
                                 <option value="2">Minuto(s)</option>
@@ -51,26 +93,26 @@
                         </td>
 
                         <td style="width: 10%; text-align: right;">
-                            <button v-on:click="calcularDistancia">Convertir</button>
+                            <button class="w-80 btn btn-lg btn-primary" v-on:click="calcularDistancia">Convertir</button>
                         </td>
 
                         <td style="width: 10%; text-align: center;">=</td>
                         <td>
-                            <input type="text" name="valorTotal_D" id="valorTotal_D" v-model="valorTotal_D" style="width: 100%;" readonly>
+                            <input type="text" name="valorTotal_D" id="valorTotal_D" v-model="valorTotal_D" style="width: 100%;" class="form-control" readonly>
                         </td>
                     </tr>
 
                     <tr>
-                        <td style="width: 10%;">Velocidad = </td>
+                        <td style="width: 10%;" class="form-label">Velocidad = </td>
 
-                        <td style="width: 10%; text-align: center;">Distancia: </td>
+                        <td style="width: 10%; text-align: center;" class="form-label">Distancia: </td>
 
                         <td>
-                            <input type="text" name="valorDistancia_V" id="valorDistancia_V" v-model="valorDistancia_V" style="width: 100%;">
+                            <input type="text" name="valorDistancia_V" id="valorDistancia_V" v-model="valorDistancia_V" style="width: 100%;" class="form-control">
                         </td>
 
-                        <td style="width: 10%; text-align: center;">
-                            <select name="unidades_distancia_V" id="unidades_distancia_V" v-model="unidades_distancia_V" style="width: 100%;">
+                        <td style="width: 15%; text-align: center;">
+                            <select name="unidades_distancia_V" id="unidades_distancia_V" v-model="unidades_distancia_V" style="width: 100%;" class="form-select">
                                 <option disabled value="">Seleccionar:</option>
                                 <option value="1">KM</option>
                                 <option value="2">M</option>
@@ -78,14 +120,14 @@
                             </select>
                         </td>
                         
-                        <td style="width: 10%; text-align: center;">Tiempo: </td>
+                        <td style="width: 10%; text-align: center;" class="form-label">Tiempo: </td>
                         
                         <td>
-                            <input type="text" name="valorTiempo_V" id="valorTiempo_V" v-model="valorTiempo_V" style="width: 100%;">
+                            <input type="text" name="valorTiempo_V" id="valorTiempo_V" v-model="valorTiempo_V" style="width: 100%;" class="form-control">
                         </td>
 
-                        <td style="width: 10%; text-align: center;">
-                            <select name="unidades_tiempo_V" id="unidades_tiempo_V" v-model="unidades_tiempo_V" style="width: 100%;">
+                        <td style="width: 15%; text-align: center;">
+                            <select name="unidades_tiempo_V" id="unidades_tiempo_V" v-model="unidades_tiempo_V" style="width: 100%;" class="form-select">
                                 <option disabled value="">Seleccionar:</option>
                                 <option value="1">Hora(s)</option>
                                 <option value="2">Minuto(s)</option>
@@ -94,26 +136,26 @@
                         </td>
 
                         <td style="width: 10%; text-align: right;">
-                            <button v-on:click="calcularVelocidad">Convertir</button>
+                            <button class="w-80 btn btn-lg btn-primary" v-on:click="calcularVelocidad">Convertir</button>
                         </td>
 
                         <td style="width: 10%; text-align: center;">=</td>
                         <td>
-                            <input type="text" name="valorTotal_V" id="valorTotal_V" v-model="valorTotal_V" style="width: 100%;" readonly>
+                            <input type="text" name="valorTotal_V" id="valorTotal_V" v-model="valorTotal_V" style="width: 100%;" class="form-control" readonly>
                         </td>
                     </tr>
                     
                     <tr>
-                        <td style="width: 10%;">Tiempo = </td>
+                        <td style="width: 10%;" class="form-label">Tiempo = </td>
 
-                        <td style="width: 10%; text-align: center;">Distancia: </td>
+                        <td style="width: 10%; text-align: center;" class="form-label">Distancia: </td>
 
                         <td>
-                            <input type="text" name="valorDistancia_T" id="valorDistancia_T" v-model="valorDistancia_T" style="width: 100%;">
+                            <input type="text" name="valorDistancia_T" id="valorDistancia_T" v-model="valorDistancia_T" style="width: 100%;" class="form-control">
                         </td>
 
-                        <td style="width: 10%; text-align: center;">
-                            <select name="unidades_distancia_T" id="unidades_distancia_T" v-model="unidades_distancia_T" style="width: 100%;">
+                        <td style="width: 15%; text-align: center;">
+                            <select name="unidades_distancia_T" id="unidades_distancia_T" v-model="unidades_distancia_T" style="width: 100%;" class="form-select">
                                 <option disabled value="">Seleccionar:</option>
                                 <option value="1">KM</option>
                                 <option value="2">M</option>
@@ -121,14 +163,14 @@
                             </select>
                         </td>
                         
-                        <td style="width: 10%; text-align: center;">Velocidad: </td>
+                        <td style="width: 10%; text-align: center;" class="form-label">Velocidad: </td>
                         
                         <td>
-                            <input type="text" name="valorVelocidad_T" id="valorVelocidad_T" v-model="valorVelocidad_T" style="width: 100%;">
+                            <input type="text" name="valorVelocidad_T" id="valorVelocidad_T" v-model="valorVelocidad_T" style="width: 100%;" class="form-control">
                         </td>
 
-                        <td style="width: 10%; text-align: center;">
-                            <select name="unidades_velocidad_T" id="unidades_velocidad_T" v-model="unidades_velocidad_T" style="width: 100%;">
+                        <td style="width: 15%; text-align: center;">
+                            <select name="unidades_velocidad_T" id="unidades_velocidad_T" v-model="unidades_velocidad_T" style="width: 100%;" class="form-select">
                                 <option disabled value="">Seleccionar:</option>
                                 <option value="1">KM/H</option>
                                 <option value="2">KM/M</option>
@@ -137,12 +179,12 @@
                         </td>
 
                         <td style="width: 10%; text-align: right;">
-                            <button v-on:click="calcularTiempo">Convertir</button>
+                            <button class="w-80 btn btn-lg btn-primary" v-on:click="calcularTiempo">Convertir</button>
                         </td>
 
                         <td style="width: 10%; text-align: center;">=</td>
                         <td>
-                            <input type="text" name="valorTotal_T" id="valorTotal_T" v-model="valorTotal_T" style="width: 100%;" readonly>
+                            <input type="text" name="valorTotal_T" id="valorTotal_T" v-model="valorTotal_T" style="width: 100%;" class="form-control" readonly>
                         </td>
                     </tr>
 

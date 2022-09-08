@@ -6,14 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8"></script>
     <script src="sweetalert2/dist/sweetalert2.min.js"></script>
+    <link href="css/diseño.css" rel="stylesheet" />
 	<link rel="stylesheet" href="sweetalert2/dist/sweetalert2.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <title>Conversion</title>
+
+    <style>
+        p {
+            color: white;
+        }
+
+        body {
+                background-image: url(imagenes/abstract-smooth-empty-grey-studio-well-use-as-background-business-report-digital-website-template-backdrop.jpg);
+            }
+    </style>
 </head>
 <body>
     <div id="myapp" style="height:inherit;" v-cloak>
+
+        <div class="container">
+            <header class="d-flex justify-content-center py-3">
+  
+              <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                  <img src="imagenes/delta.png" alt="" width="60" height="60">
+              </a>
+  
+              <ul class="nav nav-pills">
+                  <li class="nav-item">
+                      <a href="index.html" class="nav-link active" aria-current="page">Inicio</a>
+                  </li>
+  
+                  <li class="nav-item">
+                      <a href="menuConversion.html" class="nav-link">Conversión</a>
+                  </li>
+  
+                  <li class="nav-item">
+                      <a href="descomponerVectores.html" class="nav-link">Descomposición vectores</a>
+                  </li>
+  
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">Movimientos</a>
+                  </li>
+  
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">About</a>
+                  </li>
+              </ul>
+            </header>
+        </div>
+
         <div class="container px-4 py-5" id="featured-3">
-            <h2 class="pb-2 border-bottom">Conversión velo  cidades <a href="menuConversion.html"><img src="imagenes/atras.png" alt="Atrás" width="35px;"></a></h2>
+            <h2 class="pb-2 border-bottom">Conversión velocidades <a href="menuConversion.html"><img src="imagenes/atras.png" alt="Atrás" width="35px;"></a></h2>
             
             <div>
                 <table>
@@ -22,10 +65,10 @@
                     </tr>
     
                     <tr>
-                        <td style="width: 8%;">Unidad de medida: </td>
-                        <td style="width: 8%;">
-                            <select name="unidadEntrada" id="unidadEntrada" v-model="unidadEntrada" style="width: 98%;" v-on:change="limpiar">
-                                <option disabled value="">Seleccione una unidad</option>
+                        <td style="width: 8%;" class="form-label">Unidad de medida: </td>
+                        <td style="width: 15%;">
+                            <select name="unidadEntrada" id="unidadEntrada" v-model="unidadEntrada" style="width: 98%;" class="form-select" v-on:change="limpiar">
+                                <option disabled value="">Seleccione unidad</option>
                                 <option value="MS">M/S</option>
                                 <option value="KMH">KM/H</option>
                                 <option value="MH">Millas/H</option>
@@ -33,17 +76,17 @@
                         </td>
 
                         <td style="width: 20%;">
-                            <input type="text" name="valorEntrada" id="valorEntrada" v-model="valorEntrada">
+                            <input type="text" name="valorEntrada" id="valorEntrada" v-model="valorEntrada" class="form-control">
                         </td>
 
-                        <td style="text-align: left;">
+                        <td style="text-align: center;">
                             <img src="imagenes/flecha-correcta.png" alt="flecha" width="55px;">
                         </td>
 
-                        <td style="width: 8%;">Unidad de medida: </td>
-                        <td style="width: 8%;">
-                            <select name="unidadSalida" id="unidadSalida" v-model="unidadSalida" style="width: 98%;">
-                                <option disabled value="">Seleccione una unidad</option>
+                        <td style="width: 8%;" class="form-label">Unidad de medida: </td>
+                        <td style="width: 15%;">
+                            <select name="unidadSalida" id="unidadSalida" v-model="unidadSalida" style="width: 98%;" class="form-select">
+                                <option disabled value="">Seleccione unidad</option>
                                 <option value="MS">M/S</option>
                                 <option value="KMH">KM/H</option>
                                 <option value="MH">Millas/H</option>
@@ -51,11 +94,11 @@
                         </td>
                         
                         <td>
-                            <input type="text" name="valorSalida" id="valorSalida" v-model="valorSalida" readonly>
+                            <input type="text" name="valorSalida" id="valorSalida" v-model="valorSalida" class="form-control" readonly>
                         </td>
 
                         <td>
-                            <button v-on:click="convertirVelocidad">Convertir</button>
+                            <button class="w-100 btn btn-lg btn-primary" v-on:click="convertirVelocidad">Convertir</button>
                         </td>
                     </tr>
                 </table>

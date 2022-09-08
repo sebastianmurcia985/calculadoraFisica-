@@ -5,8 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8"></script>
+    <link href="css/diseño.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <title>Inicio</title>
+
+    <style>
+        p {
+            color: white;
+        }
+
+        body {
+                background-image: url(imagenes/abstract-smooth-empty-grey-studio-well-use-as-background-business-report-digital-website-template-backdrop.jpg);
+            }   
+    </style>
 </head>
 <body>
     <div id="myapp" style="height:inherit;" v-cloak>
@@ -14,6 +25,11 @@
 
         <div class="container">
           <header class="d-flex justify-content-center py-3">
+
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                <img src="imagenes/delta.png" alt="" width="60" height="60">
+            </a>
+
             <ul class="nav nav-pills">
                 <li class="nav-item">
                     <a href="index.html" class="nav-link active" aria-current="page">Inicio</a>
@@ -24,7 +40,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="descomponerVectores.html" class="nav-link">Descomposición</a>
+                    <a href="descomponerVectores.html" class="nav-link">Descomposición vectores</a>
                 </li>
 
                 <li class="nav-item">
@@ -39,12 +55,15 @@
         </div>
 
         <div class="container px-4 py-5" id="featured-3">
+
             <h2 class="pb-2 border-bottom">Calculadora</h2>
+
             <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-                <div class="feature col py-2">
+
+                <div class="feature col bg-dark py-2" style="border-radius: 21px 21px 0 0;">
                     <img src="imagenes/contrarrestar.png" alt="flecha" width="50px;" height="50px;"> 
 
-                    <h2>Conversión de unidades</h2>
+                    <h2 style="color: white;">Conversión de unidades</h2>
 
                     <p>La conversión de unidades es la transformación del valor numérico de una magnitud física, expresado en una cierta unidad de medida, en otro valor numérico equivalente y expresado en otra unidad de medida de la misma naturaleza.</p>
 
@@ -53,30 +72,29 @@
                     <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
                     </a>
                 </div>
-
-                <div class="feature col">
+                -
+                <div class="feature col-1 bg-dark" style="border-radius: 21px 21px 0 0; width: 32.3333333333%;">
                     <img src="imagenes/ejes-de-coordenadas.png" alt="coordenadas" width="60px;" height="60px;">
 
-                    <h2>Descomposición de vectores</h2>
+                    <h2 style="color: white;">Descomposición de vectores</h2>
+
                     <p>La descomposición de vectores, es obtener las componentes de un vector. Es decir, la proyección sobre los ejes del plano cartesiano X,Y,Z, del vector original. en X sera a cosӨ y la componente en y sera a senӨ, donde Ө es el angulo del vector.</p>
 
                     <a href="descomponerVectores.html" class="icon-link d-inline-flex align-items-center">
-                    Call to action
+                    Entrar!
                         <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
                     </a>
                 </div>
+                -
+                <div class="feature col-1 bg-dark" style="border-radius: 21px 21px 0 0;">
+                    <img src="imagenes/fisica.png" alt="coordenadas" width="60px;" height="60px;">
 
-                <div class="feature col">
-                    <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-                        <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
-                    </div>
+                    <h2 style="color: white;">Movimientos</h2>
 
-                    <h2>Movimientos</h2>
-
-                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+                    <p>En física, el movimiento es un cambio de la posición de un cuerpo a lo largo del tiempo respecto de un sistema de referencia. El estudio del movimiento se puede realizar a través de la cinemática o a través de la dinámica.</p>
 
                     <a href="menuMovimientos.html" class="icon-link d-inline-flex align-items-center">
-                        Call to action
+                        Entrar!
                         <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
                     </a>
                 </div>
