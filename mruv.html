@@ -1,35 +1,81 @@
-<template>
-    <div class="text-center">
-        <v-menu offset-y>
-        <template v-slot:activator="{ on, attrs }">
-            <v-btn
-                color="primary"
-                dark
-                v-bind="attrs"
-                v-on="on"
-            >
-            Dropdown
-            </v-btn>
-        </template>
-        <v-list>
-        <v-list-item
-            v-for="(item, index) in items"
-            :key="index"
-        >
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-        </v-list-item>
-        </v-list>
-        </v-menu>
-    </div>
-</template>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8"></script>
+    <script src="sweetalert2/dist/sweetalert2.min.js"></script>
+	<link rel="stylesheet" href="sweetalert2/dist/sweetalert2.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>Conversion</title>
+</head>
+<body>
+    <div id="myapp" style="height:inherit;" v-cloak>
+        <div class="container px-4 py-5" id="featured-3">
+            <h2 class="pb-2 border-bottom">Movimiento Rectilineo Uniformemente Variado<a href="menuMovimientos.html"><img src="imagenes/atras.png" alt="Atrás" width="35px;"></a></h2>
+            
+            <div>
+                <table>
+                    <tr>
+                        <td style="width: 10%;">Aceleracion:</td>
+                        
+                        <td style="text-align: center">
+                            <input type="text" name="valorAceleracion" id="valorAceleracion" v-model="valorAceleracion" style="width: 50%;">
+                        </td>
+                        
+                        <td style="width: 10%; text-align: center;">Tiempo:</td>
 
-<script>
-    export default {
-        data: () => ({
-        items: [
-            { title: 'Calcular Tiempo y Velocidad' },
-            { title: 'Calcular Distancia y Tiempo' },
-        ],
-        }),
-    }
-</script>
+                        <td style="text-align: center">
+                            <input type="text" name="valorTiempo" id="valorTiempo" v-model="valorTiempo" style="width: 50%;">
+                        </td>
+                    </tr>
+
+                    <tr><td></td></tr>
+                    <tr><td></td></tr>
+                    <tr><td></td></tr>
+
+                    <tr>
+                        <td style="width: 10%;">Distancia:</td>
+
+                        <td style="text-align: center">
+                            <input type="text" name="mruv_distancia" id="mruv_distancia" v-model="mruv_distancia" style="width: 50%;" readonly>
+                        </td>
+
+                        <td style="width: 10%;text-align: center;">
+                            <button v-on:click="mruvDistancia" style="width: 150px">Calcular Distancia</button>
+                        </td>
+
+                        <td style="width: 10%; text-align: center;">Velocidad:</td>
+
+                        <td style="text-align: center">
+                            <input type="text" name="mruv_velocidad" id="mruv_velocidad" v-model="mruv_velocidad" style="width: 50%;" readonly>
+                        </td>
+
+                        <td style="width: 10%; text-align: center;">
+                            <button v-on:click="mruvVelocidad" style="width: 150px;">Calcular Velocidad</button>
+                        </td>
+
+                        <td style="width: 10%; text-align: center;">Tiempo:</td>
+
+                        <td style="text-align: center">
+                            <input type="text" name="mruv_tiempo" id="mruv_tiempo" v-model="mruv_tiempo" style="width: 50%;" readonly>
+                        </td>
+
+                        <td style="width: 10%">
+                            <button v-on:click="mruvTiempo" style="width: 130px">Calcular Tiempo</button>
+                        </td>
+
+
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="vue/mruv.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
