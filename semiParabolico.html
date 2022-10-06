@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8"></script>
+    <script src="sweetalert2/dist/sweetalert2.min.js"></script>
+	<link rel="stylesheet" href="sweetalert2/dist/sweetalert2.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>Conversion</title>
+
+    <style>
+        p {
+            color: white;
+        }
+
+        body {
+                background-image: url(imagenes/abstract-smooth-empty-grey-studio-well-use-as-background-business-report-digital-website-template-backdrop.jpg);
+            }
+    </style>
+</head>
+<body>
+    <div id="myapp" style="height:inherit;" v-cloak>
+
+        <div class="container">
+            <header class="d-flex justify-content-center py-3">
+  
+              <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                  <img src="imagenes/delta.png" alt="" width="60" height="60">
+              </a>
+  
+              <ul class="nav nav-pills">
+                  <li class="nav-item">
+                      <a href="index.html" class="nav-link active" aria-current="page">Inicio</a>
+                  </li>
+  
+                  <li class="nav-item">
+                      <a href="menuConversion.html" class="nav-link">Conversión</a>
+                  </li>
+  
+                  <li class="nav-item">
+                      <a href="descomponerVectores.html" class="nav-link">Descomposición vectores</a>
+                  </li>
+  
+                  <li class="nav-item">
+                      <a href="menuMovimientos.html" class="nav-link">Movimientos</a>
+                  </li>
+  
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">About</a>
+                  </li>
+              </ul>
+            </header>
+        </div>
+
+        <div class="container px-4 py-5" id="featured-3">
+            <h2 class="pb-2 border-bottom">Movimiento Semiparabolico  <a href="menuMovimientos.html"><img src="imagenes/atras.png" alt="Atrás" width="35px;"></a></h2>
+            
+            <div>
+                <table>
+                    <tr>
+                        <td style="width: 10%;">Ingrese la <b>ALTURA</b> de donde parte el objeto:</td>
+                        <td style="width: 10%;">
+                            <button class="w-80 btn btn-lg btn-primary" v-on:click="calculo_tiempo" style="width: 200px">Calcular Tiempo</button>
+                        </td>
+                        <td style="width: 10%">
+                            <button class="w-80 btn btn-lg btn-primary" v-on:click="calculo_VCT" style="width: 230px">Velocidad en Tiempo</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 10%;">
+                            <br>
+                            <input type="text" name="valorAltura" id="valorAltura" v-model="valorAltura" style="width: 20%;" class="form-control">
+                            <br>
+                        </td>
+                        <td style="width: 10%;">
+                            <input type="text" name="valorTiempo" id="valorTiempo" v-model="valorTiempo" style="width: 34%;" class="form-control" readonly>
+                        </td>
+                        <td style="width: 10%">
+                            <input type="text" name="valorVCT" id="valorVCT" v-model="valorVCT" style="width: 34%;" class="form-control" readonly>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 10%">Ingrese la <b>VELOCIDAD INICIAL</b> del objeto:</td>
+                        <td style="width: 10%;">
+                            <br>
+                            <button class="w-80 btn btn-lg btn-primary" v-on:click="calculo_alcance" style="width: 200px">Calcular Alcance</button>
+                        </td>
+                        <td style="width: 10%">
+                            <button class="w-80 btn btn-lg btn-primary" v-on:click="calculo_VCP" style="width: 230px">Velocidad en Posicion</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 10%;">
+                            <br>
+                            <input type="text" name="valorVI" id="valorVI" v-model="valorVI" style="width: 20%;" class="form-control">
+                        </td>
+                        <td style="width: 10%;">
+                            <br>
+                            <input type="text" name="valorAlcance" id="valorAlcance" v-model="valorAlcance" style="width: 34%;" class="form-control" readonly>
+                        </td>
+
+                        <td style="width: 10%">
+                            <input type="text" name="valorVCP" id="valorVCP" v-model="valorVCP" style="width: 34%;" class="form-control" readonly>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="vue/semiParabolico.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
