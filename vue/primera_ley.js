@@ -3,9 +3,14 @@ var app = new Vue({
 	data:{
 
        opciones: "",
+       tension1: "",
        tension2: "",
        angulo: "",
        res_tension1: "",
+       tension1: "",
+       res_tension2: "",
+       res_peso: "",
+       res_masa: "",
     },
 
     mounted: function(){
@@ -34,6 +39,64 @@ var app = new Vue({
             else {
                 Swal.fire("Error", "Ingrese tiempo y grados", "error");
             }
+        },
+
+        hallarTension2: function() {
+            if (this.tension1 != "" && this.angulo != "") {
+
+                const angulo_teta = 0;
+                var AnguloBetaRadianes = this.angulo * (Math.PI / 180);
+                var AnguloTetaRadianes = angulo_teta * (Math.PI / 180);
+
+                var resultado = 0;
+                resultado = this.tension1 * Math.cos(AnguloTetaRadianes) / Math.cos(AnguloBetaRadianes);
+
+                this.res_tension2 = resultado.toFixed(2);
+            }
+            else {
+                Swal.fire("Error", "Ingrese tiempo y grados", "error");
+            }
+        },
+
+        hallarPeso: function(){
+            if (this.tension1 != "" && this.tension2 != "" && this.angulo != "") {
+
+                const angulo_teta = 0;
+                var AnguloBetaRadianes = this.angulo * (Math.PI / 180);
+                var AnguloTetaRadianes = angulo_teta * (Math.PI / 180);
+
+                var resultado = 0;
+
+                resultado = (this.tension1 * Math.sin(AnguloTetaRadianes)) + (this.tension2 * Math.sin(AnguloBetaRadianes));
+
+                this.res_peso = resultado.toFixed(2);
+            }
+            else{
+                Swal.fire("Error", "Ingrese tiempo y grados", "error");
+            }
+        },
+
+        hallarMasa: function(){
+            if (this.tension1 != "" && this.tension2 != "" && this.angulo != "") {
+
+                const angulo_teta = 0;
+                const gravedad = 9.8;
+                var AnguloBetaRadianes = this.angulo * (Math.PI / 180);
+                var AnguloTetaRadianes = angulo_teta * (Math.PI / 180);
+
+                var resultado = 0;
+
+                resultado = ((this.tension1 * Math.sin(AnguloTetaRadianes)) + (this.tension2 * Math.sin(AnguloBetaRadianes))) / gravedad;
+
+                this.res_masa = resultado.toFixed(2);
+            }
+            else{
+                Swal.fire("Error", "Ingrese tiempo y grados", "error");
+            }
         }
+
+
+
+
     }
 });
