@@ -37,7 +37,7 @@ var app = new Vue({
                 this.res_tension1 = resultado.toFixed(2);
             }
             else {
-                Swal.fire("Error", "Ingrese tiempo y grados", "error");
+                Swal.fire("Error", "Ingrese tension 2 y angulo", "error");
             }
         },
 
@@ -54,7 +54,7 @@ var app = new Vue({
                 this.res_tension2 = resultado.toFixed(2);
             }
             else {
-                Swal.fire("Error", "Ingrese tiempo y grados", "error");
+                Swal.fire("Error", "Ingrese tension 1 y angulo", "error");
             }
         },
 
@@ -72,7 +72,7 @@ var app = new Vue({
                 this.res_peso = resultado.toFixed(2);
             }
             else{
-                Swal.fire("Error", "Ingrese tiempo y grados", "error");
+                Swal.fire("Error", "Ingrese las tensiones y angulo", "error");
             }
         },
 
@@ -91,7 +91,7 @@ var app = new Vue({
                 this.res_masa = resultado.toFixed(2);
             }
             else{
-                Swal.fire("Error", "Ingrese tiempo y grados", "error");
+                Swal.fire("Error", "Ingrese las tensiones y angulo", "error");
             }
         }
 
