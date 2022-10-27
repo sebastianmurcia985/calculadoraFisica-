@@ -5,7 +5,8 @@ var app = new Vue({
        opciones: "",
        tension1: "",
        tension2: "",
-       angulo: "",
+       angulo_teta: "",
+       angulo_beta: "",
        res_tension1: "",
        tension1: "",
        res_tension2: "",
@@ -25,11 +26,11 @@ var app = new Vue({
     {
         hallarTension1: function() {
 
-            if (this.tension2 != "" && this.angulo != "") {
+            if (this.tension2 != "" && this.angulo_beta != "" && this.angulo_teta != "") {
 
-                const angulo_teta = 0;
-                var AnguloBetaRadianes = this.angulo * (Math.PI / 180);
-                var AnguloTetaRadianes = angulo_teta * (Math.PI / 180);
+                
+                var AnguloBetaRadianes = this.angulo_beta * (Math.PI / 180);
+                var AnguloTetaRadianes = this.angulo_teta * (Math.PI / 180);
 
                 var resultado = 0;
                 resultado = this.tension2 * Math.cos(AnguloBetaRadianes) / Math.cos(AnguloTetaRadianes);
@@ -42,11 +43,11 @@ var app = new Vue({
         },
 
         hallarTension2: function() {
-            if (this.tension1 != "" && this.angulo != "") {
+            if (this.tension1 != "" && this.angulo_beta != "" && this.angulo_teta != "") {
 
-                const angulo_teta = 0;
-                var AnguloBetaRadianes = this.angulo * (Math.PI / 180);
-                var AnguloTetaRadianes = angulo_teta * (Math.PI / 180);
+                
+                var AnguloBetaRadianes = this.angulo_beta * (Math.PI / 180);
+                var AnguloTetaRadianes = this.angulo_teta * (Math.PI / 180);
 
                 var resultado = 0;
                 resultado = this.tension1 * Math.cos(AnguloTetaRadianes) / Math.cos(AnguloBetaRadianes);
@@ -59,11 +60,10 @@ var app = new Vue({
         },
 
         hallarPeso: function(){
-            if (this.tension1 != "" && this.tension2 != "" && this.angulo != "") {
+            if (this.tension1 != "" && this.tension2 != "" && this.angulo_beta != "" && this.angulo_teta != "") {
 
-                const angulo_teta = 0;
-                var AnguloBetaRadianes = this.angulo * (Math.PI / 180);
-                var AnguloTetaRadianes = angulo_teta * (Math.PI / 180);
+                var AnguloBetaRadianes = this.angulo_beta * (Math.PI / 180);
+                var AnguloTetaRadianes = this.angulo_teta * (Math.PI / 180);
 
                 var resultado = 0;
 
@@ -77,12 +77,11 @@ var app = new Vue({
         },
 
         hallarMasa: function(){
-            if (this.tension1 != "" && this.tension2 != "" && this.angulo != "") {
+            if (this.tension1 != "" && this.tension2 != "" && this.angulo_beta != "" && this.angulo_teta != "") {
 
-                const angulo_teta = 0;
                 const gravedad = 9.8;
-                var AnguloBetaRadianes = this.angulo * (Math.PI / 180);
-                var AnguloTetaRadianes = angulo_teta * (Math.PI / 180);
+                var AnguloBetaRadianes = this.angulo_beta * (Math.PI / 180);
+                var AnguloTetaRadianes = this.angulo_teta * (Math.PI / 180);
 
                 var resultado = 0;
 
