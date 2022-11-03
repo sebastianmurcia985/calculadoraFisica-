@@ -83,39 +83,79 @@
                 <table>
                     <tr>
                         
-                        <td colspan="20"><b>Ingrese los siguientes datos:</b></td>
+                        <td colspan="20"><b>Ingrese los siguientes datos para hallar Aceleracion:</b></td>
                     </tr>
-
+                    <!--ACELERACION-->
                     <tr>
-                        <td style="width: 10%;" class="form-label">Masa 1:</td>
+                        <td style="width: 10%;text-align: center;" class="form-label">Masa 1:</td>
                         <td style="width: 10%">
-                            <input type="text" v-model="masa1" style="width: 100%">
+                            <input type="text" v-model="masa1" style="width: 50%">
                         </td>
 
-                        <td style="width: 10%;" class="form-label">Masa 2:</td>
+                        <td style="width: 10%;text-align: center;" class="form-label">Masa 2:</td>
                         <td style="width: 10%">
-                            <input type="text" v-model="masa2" style="width: 100%">
+                            <input type="text" v-model="masa2" style="width:50%">
                         </td>
 
-                        <td style="width: 10%;" class="form-label">Coeficiente de Friccion:</td>
-                        <td style="width: 10%">
-                            <input type="text" v-model="coe_fric" style="width: 100%">
+                        <td style="width: 10%;text-align: left;" class="form-label">Coeficiente de Friccion:</td>
+                        <td style="width: 10%;text-align: center;">
+                            <input type="text" v-model="coe_fric" style="width: 50%">
                         </td>
 
-                        <td style="width: 10%;" class="form-label">Angulo:</td>
+                        <td style="width: 10%;text-align: center;" class="form-label">Angulo:</td>
                         <td style="width: 10%">
-                            <input type="text" v-model="angulo" style="width: 100%">
+                            <input type="text" v-model="angulo" style="width: 50%">
                         </td>
 
-                        <td style="width: 10%; text-align: right;">
+                        <td style="width: 10%; text-align: center;">
                             <button class="w-80 btn btn-lg btn-primary" v-on:click="hallarCaso1">Calcular</button>
                         </td>
                         <td style="width: 10%; text-align: center;">=</td>
 
                         <td style="width: 10%;" class="form-label">Resultado: </td>
                         <td>
-                            <input type="text" v-model="res_caso1" readonly>
+                            <input type="text" v-model="res_caso1" readonly style="width: 400%">
                         </td>
+                    </tr>
+
+                    <tr>
+                        
+                        <td colspan="20"><b>Ingrese los siguientes datos para hallar la Tension:</b></td>
+                    </tr>
+
+
+                    <!--TENSION-->
+                    <tr>
+                        <td style="width: 10%;text-align: center;" class="form-label">Masa 1:</td>
+                        <td style="width: 10%;">
+                            <input type="text" v-model="masa1" style="width: 50%">
+                        </td>
+
+                        <td style="width: 10%;text-align: left;" class="form-label">Coeficiente de Friccion:</td>
+                        <td style="width: 10%">
+                            <input type="text" v-model="coe_fric" style="width: 50%">
+                        </td>
+
+                        <td style="width: 10%;text-align: center;" class="form-label">Angulo:</td>
+                        <td style="width: 10%">
+                            <input type="text" v-model="angulo" style="width: 50%">
+                        </td>
+
+                        <td style="width: 10%;text-align: center;" class="form-label">Aceleracion:</td>
+                        <td style="width: 10%">
+                            <input type="text" v-model="res_caso1" style="width: 50%">
+                        </td>
+
+                        <td style="width: 10%; text-align: center;">
+                            <button class="w-80 btn btn-lg btn-primary" v-on:click="hallarTension">Calcular</button>
+                        </td>
+                        <td style="width: 10%; text-align: center;">=</td>
+
+                        <td style="width: 10%;" class="form-label">Resultado: </td>
+                        <td>
+                            <input type="text" v-model="res_caso1_tension" readonly style="width: 400%">
+                        </td>
+                        
                     </tr>
                 </table>
             </div>

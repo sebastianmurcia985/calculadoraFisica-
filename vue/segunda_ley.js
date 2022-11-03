@@ -5,9 +5,13 @@ var app = new Vue({
         ejercicio2: false,
         masa1: '',
         masa2: '',
+        peso1: '',
+        peso2: '',
         coe_fric: '',
         angulo: '',
+        aceleracion: '',
         res_caso1: '',
+        res_caso1_tension: '',
     
     },
 
@@ -51,6 +55,24 @@ var app = new Vue({
             else{
                 Swal.fire("Error", "Ingrese los datos bien", "error");
             }
+        },
+
+        hallarTension: function(){
+            if(this.masa1 != '' && this.masa2 != '' && this.coe_fric != '' && this.angulo != ''){
+                
+                var AnguloRadianes = this.angulo * (Math.PI / 180);
+                this.peso1 = this.masa1 * 9.8;
+                var resultado = 0;
+
+                resultado = (this.peso1 * Math.sin(AnguloRadianes)) + (this.coe_fric * this.peso1 * Math.cos(AnguloRadianes)) + (this.masa1 * this.aceleracion)
+
+                this.res_caso1_tension = this.peso1;
+
+            }
+            else{
+                Swal.fire("Error", "Ingrese los datos bien", "error");
+            }
+
         }
     }
 });
