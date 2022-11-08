@@ -55,7 +55,7 @@
             </header>
         </div>
 
-        <div class="container px-4 py-5" id="featured-3">
+        <div class="container px-2 py-5" id="featured-3">
             <h2 class="pb-2 border-bottom">Segunda Ley: Fuerza y Aceleracion  <a href="leyes_newton.html"><img src="imagenes/atras.png" alt="Atrás" width="35px;"></a></h2>
             
             <div>
@@ -76,8 +76,6 @@
                     </tr>
                 </table>
             </div>
-
-
 
             <div v-if="ejercicio1 == true">
                 <table>
@@ -114,7 +112,7 @@
 
                         <td style="width: 10%;" class="form-label">Resultado: </td>
                         <td>
-                            <input type="text" v-model="res_caso1" readonly style="width: 400%">
+                            <input type="text" v-model="res_caso1" readonly>
                         </td>
                     </tr>
 
@@ -153,7 +151,7 @@
 
                         <td style="width: 10%;" class="form-label">Resultado: </td>
                         <td>
-                            <input type="text" v-model="res_caso1_tension" readonly style="width: 400%">
+                            <input type="text" v-model="res_caso1_tension" readonly >
                         </td>
                         
                     </tr>
@@ -161,9 +159,92 @@
             </div>
 
             <div v-if="ejercicio2 == true">
-                <tr >
-                    <td style="width: 10%;" class="form-label"> <br>EN PROGRESO</td>
-                </tr>
+                <table>
+                    <tr>
+                        <td colspan="20"><b>Ingrese los siguientes datos para hallar Aceleracion:</b></td>  
+                    </tr>
+    
+                    <tr>
+                        <td style="width: 5%; text-align: center;" class="form-label">Masa 1:</td>
+                        <td style="width: 10%">
+                            <input type="number" v-model="masa1" placeholder="KG">
+                        </td>
+    
+                        <td style="width: 5%; text-align: center;" class="form-label">Masa 2:</td>
+                        <td style="width: 10%">
+                            <input type="number" v-model="masa2" placeholder="KG">
+                        </td>
+
+                        <td style="width: 5%; text-align: center;" class="form-label">Coeficiente de fricción:</td>
+                        <td style="width: 10%">
+                            <input type="text" v-model="coe_fric">
+                        </td>
+
+                        <td style="width: 5%; text-align: center;" class="form-label">Angulo θ:</td>
+                        <td style="width: 10%">
+                            <input type="number" v-model="anguloTheta" placeholder="θ°">
+                        </td>
+
+                        <td style="width: 5%; text-align: center;" class="form-label">Angulo β:</td>
+                        <td style="width: 10%">
+                            <input type="number" v-model="anguloBeta" placeholder="β°">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td style="width: 10%; text-align: center;">
+                            <button class="w-80 btn btn-lg btn-primary" v-on:click="hallaAceleracion2">Calcular</button>
+                        </td>
+                        
+
+                        <td style="width: 10%;" class="form-label">Aceleracion: </td>
+                        <td style="width: 10%; text-align: center;">
+                            <input type="text" v-model="resp_caso2_aceleracion" readonly>
+                        </td>
+                    </tr>
+
+                    <tr></tr>
+                    <tr>
+                        
+                        <td colspan="20"><b>Ingrese los siguientes datos para hallar la Tension:</b></td>
+                    </tr>
+
+                    <tr>
+                        <td style="width: 5%; text-align: center;" class="form-label">Masa 1:</td>
+                        <td style="width: 10%">
+                            <input type="number" v-model="masa1" placeholder="KG">
+                        </td>
+
+                        <td style="width: 5%; text-align: center;" class="form-label">Angulo θ:</td>
+                        <td style="width: 10%">
+                            <input type="number" v-model="anguloTheta" placeholder="θ°">
+                        </td>
+
+                        <td style="width: 5%; text-align: center;" class="form-label">Coeficiente de fricción:</td>
+                        <td style="width: 10%">
+                            <input type="text" v-model="coe_fric">
+                        </td>
+
+                        <td style="width: 5%;  text-align: center;" class="form-label">Aceleracion:</td>
+                        <td style="width: 10%; text-align: center;">
+                            <input type="text" v-model="resp_caso2_aceleracion" readonly>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td></td>
+                        <td style="width: 10%; text-align: center;">
+                            <button class="w-80 btn btn-lg btn-primary" v-on:click="hallaTension2">Calcular</button>
+                        </td>
+                        
+
+                        <td style="width: 10%;" class="form-label">Tension:</td>
+                        <td style="width: 10%; text-align: center;">
+                            <input type="text" v-model="resp_caso2_tension" readonly>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
         

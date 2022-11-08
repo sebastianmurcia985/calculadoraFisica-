@@ -43,12 +43,11 @@ var app = new Vue({
 
             if (this.velocidad != "" && this.grados != "") {
 
-                const velocidadCuadrado = this.velocidad * this.velocidad;
                 const gravedad = 9.8;
                 var AnguloRadianes = this.grados * (Math.PI / 180);
 
                 var resultado = 0;
-                resultado = (velocidadCuadrado * Math.sin(AnguloRadianes)) / gravedad;
+                resultado = (2 * this.velocidad * Math.sin(AnguloRadianes)) / gravedad;
 
                 this.tiempoVuelo = resultado.toFixed(2);
             }
@@ -102,10 +101,10 @@ var app = new Vue({
                 const gravedad = 9.8;
                 const velocidadCuadrado = this.velocidad * this.velocidad;
                 var AnguloRadianes = this.grados * (Math.PI / 180);
+                AnguloRadianes = AnguloRadianes * 2;
                 var seno = Math.sin(AnguloRadianes);
-                const dosPorSeno = seno * 2;
     
-                var altura = ((velocidadCuadrado * dosPorSeno)/(gravedad));
+                var altura = ((velocidadCuadrado * seno)/(gravedad));
     
                 this.alcanceHorizontal = altura.toFixed(2);
             }
