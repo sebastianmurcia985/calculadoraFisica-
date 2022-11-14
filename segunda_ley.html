@@ -27,31 +27,36 @@
         <div class="container">
             <header class="d-flex justify-content-center py-3">
   
-              <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-                  <img src="imagenes/delta.png" alt="" width="60" height="60">
-              </a>
-  
-              <ul class="nav nav-pills">
-                  <li class="nav-item">
-                      <a href="index.html" class="nav-link active" aria-current="page">Inicio</a>
-                  </li>
-  
-                  <li class="nav-item">
-                      <a href="menuConversion.html" class="nav-link">Conversión</a>
-                  </li>
-  
-                  <li class="nav-item">
-                      <a href="descomponerVectores.html" class="nav-link">Descomposición vectores</a>
-                  </li>
-  
-                  <li class="nav-item">
-                      <a href="menuMovimientos.html" class="nav-link">Movimientos</a>
-                  </li>
-  
-                  <li class="nav-item">
-                      <a href="#" class="nav-link">About</a>
-                  </li>
-              </ul>
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                    <img src="imagenes/delta.png" alt="" width="60" height="60">
+                </a>
+    
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active" aria-current="page">Inicio</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a href="menuConversion.html" class="nav-link">Conversión</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a href="descomponerVectores.html" class="nav-link">Descomposición</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a href="menuMovimientos.html" class="nav-link">Movimientos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="leyes_newton.html" class="nav-link">Newton</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">About</a>
+                    </li>
+                </ul>
+
             </header>
         </div>
 
@@ -108,9 +113,11 @@
                         <td style="width: 10%; text-align: center;">
                             <button class="w-80 btn btn-lg btn-primary" v-on:click="hallarCaso1">Calcular</button>
                         </td>
-                        <td style="width: 10%; text-align: center;">=</td>
+                        
+                        <td style="text-align: center;">
+                            <img src="imagenes/flecha-correcta.png" alt="flecha" width="55px;">
+                        </td>
 
-                        <td style="width: 10%;" class="form-label">Resultado: </td>
                         <td>
                             <input type="text" v-model="res_caso1" readonly>
                         </td>
@@ -147,9 +154,11 @@
                         <td style="width: 10%; text-align: center;">
                             <button class="w-80 btn btn-lg btn-primary" v-on:click="hallarTension">Calcular</button>
                         </td>
-                        <td style="width: 10%; text-align: center;">=</td>
+                        
+                        <td style="text-align: center;">
+                            <img src="imagenes/flecha-correcta.png" alt="flecha" width="55px;">
+                        </td>
 
-                        <td style="width: 10%;" class="form-label">Resultado: </td>
                         <td>
                             <input type="text" v-model="res_caso1_tension" readonly >
                         </td>

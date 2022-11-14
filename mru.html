@@ -26,37 +26,45 @@
         <div class="container">
             <header class="d-flex justify-content-center py-3">
   
-              <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-                  <img src="imagenes/delta.png" alt="" width="60" height="60">
-              </a>
-  
-              <ul class="nav nav-pills">
-                  <li class="nav-item">
-                      <a href="index.html" class="nav-link active" aria-current="page">Inicio</a>
-                  </li>
-  
-                  <li class="nav-item">
-                      <a href="menuConversion.html" class="nav-link">Conversión</a>
-                  </li>
-  
-                  <li class="nav-item">
-                      <a href="descomponerVectores.html" class="nav-link">Descomposición vectores</a>
-                  </li>
-  
-                  <li class="nav-item">
-                      <a href="menuMovimientos.html" class="nav-link">Movimientos</a>
-                  </li>
-  
-                  <li class="nav-item">
-                      <a href="#" class="nav-link">About</a>
-                  </li>
-              </ul>
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                    <img src="imagenes/delta.png" alt="" width="60" height="60">
+                </a>
+    
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active" aria-current="page">Inicio</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a href="menuConversion.html" class="nav-link">Conversión</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a href="descomponerVectores.html" class="nav-link">Descomposición</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a href="menuMovimientos.html" class="nav-link">Movimientos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="leyes_newton.html" class="nav-link">Newton</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">About</a>
+                    </li>
+
             </header>
         </div>
 
         <div class="container px-4 py-5" id="featured-3">
             <h2 class="pb-2 border-bottom">Movimiento Rectilineo Uniforme  <a href="menuMovimientos.html"><img src="imagenes/atras.png" alt="Atrás" width="35px;"></a></h2>
             
+            <div style="text-align: center;">
+                <img src="imagenes/movimientoRectilineoUniforme.png" alt="descomposicion" height="300px" width="300px">
+            </div>
+
             <div>
                 <table>
                     <tr>
@@ -96,7 +104,10 @@
                             <button class="w-80 btn btn-lg btn-primary" v-on:click="calcularDistancia">Convertir</button>
                         </td>
 
-                        <td style="width: 10%; text-align: center;">=</td>
+                        <td style="text-align: left;">
+                            <img src="imagenes/flecha-correcta.png" alt="flecha" width="55px;">
+                        </td>
+
                         <td>
                             <input type="text" name="valorTotal_D" id="valorTotal_D" v-model="valorTotal_D" style="width: 100%;" class="form-control" readonly>
                         </td>
@@ -139,7 +150,10 @@
                             <button class="w-80 btn btn-lg btn-primary" v-on:click="calcularVelocidad">Convertir</button>
                         </td>
 
-                        <td style="width: 10%; text-align: center;">=</td>
+                        <td style="text-align: left;">
+                            <img src="imagenes/flecha-correcta.png" alt="flecha" width="55px;">
+                        </td>    
+                    
                         <td>
                             <input type="text" name="valorTotal_V" id="valorTotal_V" v-model="valorTotal_V" style="width: 100%;" class="form-control" readonly>
                         </td>
@@ -182,7 +196,10 @@
                             <button class="w-80 btn btn-lg btn-primary" v-on:click="calcularTiempo">Convertir</button>
                         </td>
 
-                        <td style="width: 10%; text-align: center;">=</td>
+                        <td style="text-align: left;">
+                            <img src="imagenes/flecha-correcta.png" alt="flecha" width="55px;">
+                        </td>
+
                         <td>
                             <input type="text" name="valorTotal_T" id="valorTotal_T" v-model="valorTotal_T" style="width: 100%;" class="form-control" readonly>
                         </td>
